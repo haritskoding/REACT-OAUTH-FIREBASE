@@ -1,0 +1,37 @@
+yarn add firebase 
+yarn add react-firebaseui
+
+
+1. buat projek baru pada firebase -> pilih authentication -> pilih sign in method
+
+
+daftar di developer facebook
+https://developers.facebook.com/apps
+
+buat projek baru disana berikan nama Firebase-auth-tutorial
+ke pengaturan basic kopi kunci rahasia
+dan masukan id dari facebook developer serta siapkan secret key nya untuk nanti di firebase nya
+
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
